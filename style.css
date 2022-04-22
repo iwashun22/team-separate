@@ -130,6 +130,7 @@ input[type=number] {
 }
 .team-list {
    min-height: 70px;
+   max-height: none;
 }
 .team-list p{
    text-align: center;
