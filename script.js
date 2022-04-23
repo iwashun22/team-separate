@@ -37,21 +37,30 @@ addPlayerBtn.addEventListener("click", () => {
 });
 
 separateBtn.addEventListener('click', () => {
-   teams.clear();
-   players = [];
-   const playersElement = playersList.children;
-   if(playersElement.length >= 2) {
-      for(const player of playersElement) {
-         // console.log(player);
-         const playerName = player.querySelector(".player").innerText;
-         // console.log(playerName);
-         players.push(playerName);
+   const inputNumber = Number(teamNumber.value);
+   const validNumber = /^([2-9]|[1-9][0-9])$/gi;
+   if(validNumber.test(inputNumber)) {
+      teams.clear();
+      players = [];
+      const playersElement = playersList.children;
+      if(playersElement.length >= 2) {
+         for(const player of playersElement) {
+            // console.log(player);
+            const playerName = player.querySelector(".player").innerText;
+            // console.log(playerName);
+            players.push(playerName);
+         }
+         shuffle(players);
+         separateToTeam(players, inputNumber);
+         console.table(teams);
+         displayButton();
+         createElement();
+      } else {
+         alert('プレイヤーは二人以上必要です');
       }
-      shuffle(players);
-      separateToTeam(players, Number(teamNumber.value));
-      console.table(teams);
-      displayButton();
-      createElement();
+   } else {
+      alert('チーム数は半角の数字で ２〜９９までです');
+      teamNumber.value = '';
    }
 })
 
