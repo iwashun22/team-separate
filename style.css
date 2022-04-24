@@ -27,6 +27,7 @@ body {
    width: 100vw;
    height: 100vh;
    background: linear-gradient(-45deg, rgb(141, 232, 255), rgb(255, 123, 237));
+   overflow: hidden;
 }
 
 .btn, .btn.b3 {
