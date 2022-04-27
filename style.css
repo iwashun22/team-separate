@@ -207,3 +207,17 @@ input[type=number] {
    background-color: rgba(255, 255, 255, 0.33);
    margin-bottom: 10px;
 }
+
+@media screen and (min-width: 0) and (max-width: 414px){
+   h1, h2, h3 {
+      padding: 10px 0;
+   }
+   .form {
+      padding: 15px;
+   }
+   @media screen and (min-height: 0) and (max-height: 844){
+      .grid-box {
+         max-height: 200px;
+      }
+   }
+}
